@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
@@ -13,7 +12,6 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#FAFAFA]">
-      <Navbar />
       <Hero />
       <About />
       <Experience />

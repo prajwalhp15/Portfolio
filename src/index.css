@@ -8,52 +8,38 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Deep navy/charcoal background for AI/Data theme */
-    --background: 220 30% 6%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    /* Glassmorphic card backgrounds */
-    --card: 220 25% 12%;
-    --card-foreground: 210 40% 98%;
-    --glass: 220 25% 15% / 0.7;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --glass: 0 0% 4% / 0.8;
 
-    --popover: 220 25% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Violet accent for primary actions */
-    --primary: 270 70% 65%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 270 70% 75%;
+    --primary-glow: 217 91% 70%;
 
-    /* Cyan accent for secondary actions */
-    --secondary: 190 75% 55%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 190 75% 65%;
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-glow: 240 5% 25%;
 
-    --muted: 220 20% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 67%;
 
-    --accent: 270 70% 65%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 60%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 18%;
-    --ring: 270 70% 65%;
+    --border: 0 0% 12%;
+    --input: 0 0% 10%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
-
-    /* Custom gradient stops */
-    --gradient-violet: 270 70% 65%;
-    --gradient-cyan: 190 75% 55%;
-    --gradient-dark: 220 30% 8%;
-    
-    /* Shadows with glow */
-    --shadow-glow-violet: 0 8px 32px -8px hsl(270 70% 65% / 0.4);
-    --shadow-glow-cyan: 0 8px 32px -8px hsl(190 75% 55% / 0.4);
-    --shadow-card: 0 4px 16px -4px hsl(220 30% 4% / 0.5);
+    --radius: 0.5rem;
   }
 }
 
@@ -63,11 +49,12 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-['Inter'] antialiased;
+    @apply bg-background text-foreground font-['Inter'] antialiased selection:bg-primary/20 selection:text-primary;
+    background-color: #0A0A0A;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-['Orbitron'] font-bold;
+    @apply font-['Plus_Jakarta_Sans'] tracking-tight font-bold text-foreground;
   }
 
   html {
@@ -77,30 +64,18 @@ All colors MUST be HSL.
 
 @layer utilities {
   .glass-panel {
-    @apply backdrop-blur-xl bg-card/70 border border-white/10 rounded-2xl shadow-lg;
+    @apply backdrop-blur-md bg-card/45 border border-white/5 rounded-xl shadow-xl;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  .premium-card {
+    @apply bg-card border border-white/5 rounded-xl shadow-lg hover:border-white/10 hover:bg-card/90 transition-all duration-300;
   }
 
-  .gradient-border {
-    @apply relative before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10;
+  .accent-link {
+    @apply text-primary hover:text-primary-glow transition-colors duration-200;
   }
 
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
-  }
-
-  .hover-glow-violet {
-    @apply transition-all duration-300 hover:shadow-[0_8px_32px_-8px_hsl(270_70%_65%/0.6)];
-  }
-
-  .hover-glow-cyan {
-    @apply transition-all duration-300 hover:shadow-[0_8px_32px_-8px_hsl(190_75%_55%/0.6)];
-  }
-
-  .fade-up {
-    @apply animate-fade-in;
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/5;
   }
 }

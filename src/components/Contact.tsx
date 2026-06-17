@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Mail, Linkedin, Github, Phone } from "lucide-react";
+import { Mail, Linkedin, Github, Award, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -12,138 +13,220 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const contactInfo = [
-    { icon: Mail, label: "Email", value: "prajwalhp15@gmail.com", href: "mailto:prajwalhp15@gmail.com" },
-    { icon: Phone, label: "Phone", value: "+91 9620860511", href: "tel:+919620860511" },
-    { icon: Linkedin, label: "LinkedIn", value: "https://www.linkedin.com/in/prajwal-hp/", href: "https://www.linkedin.com/in/prajwal-hp/" },
-    { icon: Github, label: "GitHub", value: "https://github.com/prajwalhp15", href: "https://github.com/prajwalhp15" },
+  const contactLinks = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "prajwalhp15@gmail.com",
+      href: "mailto:prajwalhp15@gmail.com",
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "linkedin.com/in/prajwal-hp",
+      href: "https://www.linkedin.com/in/prajwal-hp/",
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      value: "github.com/prajwalhp15",
+      href: "https://github.com/prajwalhp15",
+    },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const milestones = [
+    "Selected for 2nd Stage Evaluation in AICTE YUKTI Innovation Challenge 2025 (LuminaCXR)",
+    "Built and deployed real-time personnel tracking system used by Karnataka Police",
+    "2nd Place – Hack Yugma State-Level Hackathon",
+    "Contributed to NITK Cyber Knowledge Project supported by Honeywell",
+    "Participated in Smart India Hackathon",
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Validation Error",
-        description: "Please fill in all fields",
+        description: "Please fill in all fields before submitting.",
         variant: "destructive",
       });
       return;
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address",
+        title: "Invalid Email Address",
+        description: "Please enter a valid email address.",
         variant: "destructive",
       });
       return;
     }
 
+    setIsSubmitting(true);
+    // Simulate API request
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    setIsSubmitting(false);
+
     toast({
-      title: "Message Sent! ✨",
-      description: "Thank you for reaching out. I'll get back to you soon!",
+      title: "Message Sent!",
+      description: "Thank you for reaching out. Prajwal will get back to you shortly.",
     });
 
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact" className="py-20 px-4 relative">
+    <section
+      id="contact"
+      className="py-32 px-6 md:px-8 bg-[#0D0D0D] border-b border-white/5 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 gradient-text">
+        {/* Header */}
+        <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-primary text-xs font-semibold tracking-wider uppercase mb-3"
+            id="contact-badge"
+          >
+            Connect
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-black tracking-tight text-[#FAFAFA]"
+            id="contact-heading"
+          >
             Get In Touch
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Interested in collaboration or have a project in mind? Feel free to reach out!
-          </p>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-[#A1A1AA] text-base mt-2"
+          >
+            Open for full-time AI engineering roles, technical partnerships, or consulting initiatives.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="glass-panel p-6 hover-lift hover-glow-violet">
-              <h3 className="text-2xl font-display font-bold mb-6">Contact Information</h3>
+        {/* 2-Column Portal */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Left: Links & Recognition */}
+          <div className="lg:col-span-5 space-y-8">
+            {/* Contact details */}
+            <div className="premium-card p-8">
+              <h3 className="text-lg font-bold text-[#FAFAFA] mb-6 tracking-tight">
+                Direct Channels
+              </h3>
               <div className="space-y-4">
-                {contactInfo.map((info) => (
+                {contactLinks.map((link) => (
                   <a
-                    key={info.label}
-                    href={info.href}
+                    key={link.label}
+                    href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-3 rounded-lg bg-card/30 border border-primary/10 hover:border-primary/30 transition-all group"
+                    className="flex items-center gap-4 p-3.5 rounded-lg border border-white/5 bg-white/[0.01] hover:bg-white/5 hover:border-white/10 transition-all group"
+                    id={`contact-link-${link.label.toLowerCase()}`}
                   >
-                    <div className="p-2 rounded-lg bg-primary/20 border border-primary/30 group-hover:scale-110 transition-transform">
-                      <info.icon className="w-5 h-5 text-primary" />
+                    <div className="p-2 rounded bg-primary/10 border border-primary/20 text-primary group-hover:scale-105 transition-transform">
+                      <link.icon className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
-                      <p className="font-medium">{info.value}</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#A1A1AA]">
+                        {link.label}
+                      </p>
+                      <p className="text-sm font-medium text-[#FAFAFA]">{link.value}</p>
                     </div>
                   </a>
                 ))}
               </div>
             </div>
+
+            {/* Achievements block */}
+            <div className="premium-card p-8">
+              <div className="flex items-center gap-2.5 mb-6 text-primary">
+                <Award className="w-5 h-5" />
+                <h3 className="text-lg font-bold text-[#FAFAFA] tracking-tight">
+                  Key Milestones & Recognition
+                </h3>
+              </div>
+              <ul className="space-y-3.5">
+                {milestones.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-xs leading-relaxed text-[#E5E5E5]">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="glass-panel p-6 md:p-8 hover-lift hover-glow-cyan">
-            <h3 className="text-2xl font-display font-bold mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Your name"
-                  className="bg-card/50 border-primary/20 focus:border-primary/50"
-                  required
-                />
+          {/* Right: Modern Contact Form */}
+          <div className="lg:col-span-7 premium-card p-8 md:p-10">
+            <h3 className="text-xl font-bold text-[#FAFAFA] tracking-tight mb-8">
+              Submit an Inquiry
+            </h3>
+            <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="contact-name" className="block text-xs font-bold uppercase tracking-wider text-[#A1A1AA] mb-2">
+                    Name
+                  </label>
+                  <Input
+                    id="contact-name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your name"
+                    className="bg-background border-white/10 focus:border-primary/50 text-white rounded-lg h-11"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-email" className="block text-xs font-bold uppercase tracking-wider text-[#A1A1AA] mb-2">
+                    Email Address
+                  </label>
+                  <Input
+                    id="contact-email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="you@example.com"
+                    className="bg-background border-white/10 focus:border-primary/50 text-white rounded-lg h-11"
+                    required
+                  />
+                </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="your.email@example.com"
-                  className="bg-card/50 border-primary/20 focus:border-primary/50"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label htmlFor="contact-message" className="block text-xs font-bold uppercase tracking-wider text-[#A1A1AA] mb-2">
                   Message
                 </label>
                 <Textarea
-                  id="message"
+                  id="contact-message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Your message..."
-                  rows={5}
-                  className="bg-card/50 border-primary/20 focus:border-primary/50 resize-none"
+                  placeholder="Tell me about your product initiatives or engineering opportunities..."
+                  rows={6}
+                  className="bg-background border-white/10 focus:border-primary/50 text-white rounded-lg resize-none p-4"
                   required
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform text-base font-semibold"
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-primary-glow text-white font-semibold h-11 rounded-lg transition-all"
+                id="contact-submit-btn"
               >
-                Send Message
+                {isSubmitting ? "Sending Inquiry..." : "Send Message"}
               </Button>
             </form>
           </div>

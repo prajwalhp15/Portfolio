@@ -1,25 +1,27 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Education from "@/components/Education";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
-import Achievements from "@/components/Achievements";
+import Products from "@/components/Products";
+import ClientWork from "@/components/ClientWork";
+import Projects from "@/components/Projects";
 import Leadership from "@/components/Leadership";
+import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#0A0A0A] text-[#FAFAFA]">
+      <Navbar />
       <Hero />
       <About />
-      <Education />
-      <Skills />
-      <Projects />
       <Experience />
-      <Achievements />
+      <Products />
+      <ClientWork />
+      <Projects />
       <Leadership />
+      <Skills />
       <Contact />
       <Footer />
     </div>

@@ -1,32 +1,88 @@
+import { motion } from "framer-motion";
+
 const About = () => {
   return (
-    <section id="about" className="py-20 px-4 relative">
+    <section
+      id="about"
+      className="py-32 px-6 md:px-8 bg-[#0A0A0A] border-b border-white/5 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 gradient-text">
-            About Me
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+          {/* Left Column: Heading and Tag */}
+          <div className="lg:col-span-5 flex flex-col justify-start">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-primary text-xs font-semibold tracking-wider uppercase mb-3"
+              id="about-badge"
+            >
+              Background
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl md:text-5xl font-black tracking-tight text-[#FAFAFA]"
+              id="about-heading"
+            >
+              About Me
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, scaleX: 0 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-12 h-1 bg-primary mt-6 origin-left rounded"
+            />
+          </div>
 
-        <div className="glass-panel p-8 md:p-12 hover-lift hover-glow-violet">
-          <h3 className="text-2xl font-display font-semibold mb-6 text-primary">
-            Professional Summary
-          </h3>
-         <p className="text-lg leading-relaxed text-foreground/90">
-  I’m an <span className="font-semibold">AIML Engineering student</span> passionate about building intelligent systems and uncovering insights from data.  
-  I have hands-on experience in <span className="text-primary font-semibold">ML/NLP systems</span>, 
-  <span className="text-secondary font-semibold"> Reinforcement Learning</span>, and <span className="text-primary font-semibold">Full-Stack Development</span>, 
-  and have contributed to <span className="text-secondary font-semibold">real-world commercial projects</span>.  
-  I enjoy participating in hackathons, leading initiatives, and creating projects that make an impact.  
-  I love exploring new technologies, experimenting with AI solutions, and finding creative ways to solve real-world problems.  
-  My goal is to build meaningful applications that combine innovation with practical value.
-</p>
-
-          
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-           
-            
+          {/* Right Column: Detailed Narrative Paragraphs */}
+          <div className="lg:col-span-7 space-y-6 text-[#E5E5E5] text-lg leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              id="about-p-1"
+            >
+              I am an Artificial Intelligence and Machine Learning Engineer passionate about building
+              technology that creates real-world impact.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              id="about-p-2"
+            >
+              My experience spans machine learning, computer vision, NLP, deep learning, AI-powered
+              automation, and full-stack development. I have worked on healthcare AI systems,
+              retrieval-augmented generation applications, real-time tracking systems, and commercial
+              software projects.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              id="about-p-3"
+            >
+              Alongside technical development, I actively contribute to leadership initiatives through IEEE
+              and product development efforts through early-stage ventures and client-focused projects.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              id="about-p-4"
+            >
+              I enjoy combining technical expertise, product thinking, and problem-solving to create
+              scalable solutions.
+            </motion.p>
           </div>
         </div>
       </div>

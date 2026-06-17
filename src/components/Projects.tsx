@@ -1,185 +1,222 @@
-import { useState } from "react";
-import { ExternalLink, Github, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Github, ExternalLink, Code2, AlertTriangle, Cpu, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-
   const projects = [
     {
-      title: "Reinforcement Learning-Based Cyber Threat Detection",
-      shortDesc: "DQN-powered anomaly detection system for 6G networks using Neo4j graph database",
-      fullDesc: "Advanced cyber threat detection system leveraging Deep Q-Network (DQN) reinforcement learning algorithms to identify and mitigate security threats in next-generation 6G networks. Utilizes Neo4j graph database for efficient threat relationship mapping and pattern recognition.",
-      tech: ["Python", "DQN", "Neo4j", "Reinforcement Learning", "Network Security"],
-      link: "#",
-      github: "https://github.com/prajwalhp15/cybersecurity-in-6G-Network",
-      color: "from-primary to-primary-glow",
+      name: "LuminaCXR",
+      subtitle: "AI-Powered Chest X-Ray Disease Detection System",
+      problem: "Accurate and fast diagnosis of chest diseases from X-rays remains a bottleneck in medical workflows, often lacking explainability for clinical validation.",
+      solution: "Built a deep learning-based detection system using DenseNet, ResNet, and EfficientNet architectures, integrated with Grad-CAM to visualize and explain model focus areas.",
+      impact: "Automated detection of Tuberculosis, Pneumonia, and COVID with explainable visual highlights, earning selection for the 2nd Stage Evaluation in AICTE YUKTI Innovation Challenge 2025.",
+      tech: ["DenseNet", "ResNet", "EfficientNet", "Grad-CAM Explainability", "Tuberculosis Detection", "Pneumonia Detection", "COVID Detection", "PyTorch", "Python"],
+      github: "https://github.com/prajwalhp15",
+      demo: "#",
     },
     {
-      title: "HologramArcade (VisionLab)",
-      shortDesc: "Interactive holographic display with gesture recognition using MediaPipe and Three.js",
-      fullDesc: "Cutting-edge holographic display system featuring real-time gesture recognition powered by MediaPipe. Users can interact with 3D holographic objects through intuitive hand gestures, with integrated audio controls and speech recognition for seamless multimodal interaction.",
-      tech: ["MediaPipe", "Three.js", "JavaScript", "Computer Vision", "WebGL"],
-      link: "#",
-      github: "https://github.com/prajwalhp15/Hologramarcade3D",
-      color: "from-secondary to-secondary-glow",
+      name: "Police Personnel Tracking System",
+      subtitle: "Real-Time GPS Security Dashboard",
+      problem: "Coordinating and tracking police personnel in real-time during major public events like the Ganapathi procession was manually intensive and lacked live visibility.",
+      solution: "Built and deployed a web-based real-time GPS tracking and coordination dashboard utilizing secure WebSockets, Leaflet maps, and a scalable backend.",
+      impact: "Successfully deployed and used by the Karnataka Police and Smart City Control Room to monitor security personnel live during processions.",
+      tech: ["React", "Node.js", "WebSockets", "MongoDB", "Leaflet Maps", "GPS Integration"],
+      github: "https://github.com/prajwalhp15",
+      demo: "#",
     },
     {
-      title: "ExplainMyCar - Car Price Prediction",
-      shortDesc: "ML-powered car price prediction with SHAP explainability deployed via Streamlit",
-      fullDesc: "Comprehensive car price prediction system utilizing advanced regression algorithms. Features SHAP (SHapley Additive exPlanations) integration for model interpretability, allowing users to understand the factors influencing price predictions. Deployed as an interactive web application using Streamlit.",
-      tech: ["Python", "Machine Learning", "SHAP", "Streamlit", "Regression"],
-      link: "#",
-      github: "https://github.com/prajwalhp15/ExplainMyCar",
-      color: "from-primary to-secondary",
+      name: "RAG-Based Document Assistant",
+      subtitle: "Citation-Grounded Local LLM Assistant",
+      problem: "Traditional document search systems fail to answer context-specific questions directly and often suffer from hallucinations and lack of privacy.",
+      solution: "Built a Retrieval-Augmented Generation assistant using local LLMs via Ollama, FAISS vector database, FastAPI, and a Streamlit user interface.",
+      impact: "Enabled completely offline, citation-grounded document question answering, maintaining strict data privacy for proprietary text files.",
+      tech: ["FastAPI", "FAISS", "Streamlit", "Ollama", "Local LLMs", "RAG Systems", "Python"],
+      github: "https://github.com/prajwalhp15",
+      demo: "#",
     },
     {
-      title: "RainWise (SIH 2025)",
-      shortDesc: "Rooftop rainwater harvesting assessment platform with automated reports and subsidy analysis",
-      fullDesc: "Smart web application for evaluating rooftop rainwater harvesting potential. Provides detailed feasibility analysis, automated recommendation reports, cost-benefit analysis, and government subsidy eligibility assessment. Aims to promote sustainable water management practices.",
-      tech: ["React", "Flask", "MongoDB", "Data Analytics", "Environmental Tech"],
-      link: "#",
+      name: "RainWise",
+      subtitle: "Rooftop Rainwater Harvesting Feasibility Assessment",
+      problem: "Assessing rainwater harvesting potential on rooftops requires manual, complex calculations, making sustainability audits inaccessible to property owners.",
+      solution: "Developed an automated assessment platform that calculates rooftop catchment areas, generates feasibility reports, and evaluates cost-benefit structures.",
+      impact: "Developed for the Smart India Hackathon, delivering automated reports, financial analyses, and sustainability insights.",
+      tech: ["React", "Flask", "PostgreSQL", "Chart.js", "Data Analytics"],
       github: "https://github.com/prajwalhp15/Rainwise",
-      color: "from-secondary to-primary",
+      demo: "#",
     },
     {
-      title: "ESDO Salon Website",
-      shortDesc: "Full-stack salon management system with multi-role access (Admin/Partner/Customer)",
-      fullDesc: "Commercial full-stack web application for comprehensive salon management. Features role-based access control for administrators, salon partners, and customers. Includes appointment scheduling, service management, payment processing, and customer relationship management.",
-      tech: ["React", "Node.js", "MongoDB", "Authentication", "Full-Stack"],
-      link: "#",
-      github: "#",
-      color: "from-primary-glow to-secondary-glow",
+      name: "Holographic Display System",
+      subtitle: "Gesture-Controlled Interactive 3D Interface",
+      problem: "Touchless interactive systems are complex to interface with 3D models and require expensive custom hardware setups.",
+      solution: "Designed a holographic display system featuring real-time hand gesture recognition utilizing OpenCV and MediaPipe computer vision technologies.",
+      impact: "Enabled natural, touchless gesture controls without screen contact, perfect for public exhibits and sterile medical environments.",
+      tech: ["OpenCV", "MediaPipe", "Python", "Computer Vision", "Gesture Recognition"],
+      github: "https://github.com/prajwalhp15/Hologramarcade3D",
+      demo: "#",
+    },
+    {
+      name: "Reinforcement Learning Cyber Threat Detection",
+      subtitle: "DQN-Powered Anomaly Detection System",
+      problem: "Hardcoded network rules fail against dynamic, zero-day cyber attacks in next-generation network architectures.",
+      solution: "Implemented a Deep Q-Network (DQN) reinforcement learning model for adaptive network anomaly detection.",
+      impact: "Outperformed traditional rule-based models in detecting dynamic cyber threats, contributing to next-generation network security research.",
+      tech: ["Python", "PyTorch", "Deep Q-Network (DQN)", "Reinforcement Learning", "Network Security"],
+      github: "https://github.com/prajwalhp15/cybersecurity-in-6G-Network",
+      demo: "#",
     },
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 relative">
+    <section
+      id="projects"
+      className="py-32 px-6 md:px-8 bg-[#0A0A0A] border-b border-white/5 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 gradient-text">
+        {/* Header */}
+        <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-primary text-xs font-semibold tracking-wider uppercase mb-3"
+            id="projects-badge"
+          >
+            Portfolio
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-black tracking-tight text-[#FAFAFA]"
+            id="projects-heading"
+          >
             Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-[#A1A1AA] text-base mt-2"
+          >
+            Case studies detailing real-world engineering challenges, technological solutions, and operational outcomes.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className="glass-panel p-6 hover-lift hover-glow-cyan group cursor-pointer"
-              onClick={() => setSelectedProject(project)}
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
+        {/* Case Study Stack */}
+        <div className="space-y-16">
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="border border-white/5 bg-card/25 rounded-2xl p-8 md:p-12 hover:border-white/10 transition-all duration-300"
+              id={`project-case-${idx}`}
             >
-              <div className={`w-full h-2 rounded-full bg-gradient-to-r ${project.color} mb-4`} />
-              
-              <h3 className="text-xl font-display font-bold mb-3 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              
-              <p className="text-muted-foreground mb-4 line-clamp-2">
-                {project.shortDesc}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.slice(0, 3).map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 rounded-md bg-primary/10 border border-primary/20 text-xs"
+              {/* Project Header */}
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-8">
+                <div>
+                  <h3
+                    className="text-3xl font-extrabold text-[#FAFAFA]"
+                    id={`project-name-${idx}`}
                   >
-                    {tech}
-                  </span>
-                ))}
-                {project.tech.length > 3 && (
-                  <span className="px-2 py-1 rounded-md bg-secondary/10 border border-secondary/20 text-xs">
-                    +{project.tech.length - 3} more
-                  </span>
-                )}
+                    {project.name}
+                  </h3>
+                  <p
+                    className="text-sm font-medium text-primary mt-1"
+                    id={`project-subtitle-${idx}`}
+                  >
+                    {project.subtitle}
+                  </p>
+                </div>
+                {/* Actions */}
+                <div className="flex items-center gap-3 mt-4 md:mt-0">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-[#FAFAFA] h-9"
+                    asChild
+                    id={`project-github-btn-${idx}`}
+                  >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
+                  </Button>
+                  {project.demo !== "#" && (
+                    <Button
+                      size="sm"
+                      className="bg-primary hover:bg-primary-glow text-white h-9"
+                      asChild
+                      id={`project-demo-btn-${idx}`}
+                    >
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </div>
 
-              <div className="flex gap-2">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="flex-1 hover-glow-violet"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Demo
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="flex-1 hover-glow-cyan"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  Code
-                </Button>
+              {/* Case Study Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                {/* Problem */}
+                <div className="space-y-2" id={`project-problem-block-${idx}`}>
+                  <div className="flex items-center gap-2 text-[#A1A1AA] text-xs font-semibold uppercase tracking-wider">
+                    <AlertTriangle className="w-4 h-4 text-amber-500" />
+                    <span>Problem</span>
+                  </div>
+                  <p className="text-[#E5E5E5] text-sm leading-relaxed">
+                    {project.problem}
+                  </p>
+                </div>
+
+                {/* Solution */}
+                <div className="space-y-2" id={`project-solution-block-${idx}`}>
+                  <div className="flex items-center gap-2 text-[#A1A1AA] text-xs font-semibold uppercase tracking-wider">
+                    <Cpu className="w-4 h-4 text-primary" />
+                    <span>Solution</span>
+                  </div>
+                  <p className="text-[#E5E5E5] text-sm leading-relaxed">
+                    {project.solution}
+                  </p>
+                </div>
+
+                {/* Impact */}
+                <div className="space-y-2" id={`project-impact-block-${idx}`}>
+                  <div className="flex items-center gap-2 text-[#A1A1AA] text-xs font-semibold uppercase tracking-wider">
+                    <TrendingUp className="w-4 h-4 text-emerald-500" />
+                    <span>Impact</span>
+                  </div>
+                  <p className="text-[#FAFAFA] text-sm leading-relaxed font-medium">
+                    {project.impact}
+                  </p>
+                </div>
               </div>
-            </div>
+
+              {/* Technology Tags */}
+              <div>
+                <div className="w-full h-px bg-white/5 mb-6" />
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2.5 py-1 text-xs font-medium rounded bg-white/5 border border-white/5 text-[#E5E5E5]"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
-
-      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="glass-panel max-w-2xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-display gradient-text">
-              {selectedProject?.title}
-            </DialogTitle>
-          </DialogHeader>
-          
-          <div className="space-y-4">
-            <p className="text-foreground/90 leading-relaxed">
-              {selectedProject?.fullDesc}
-            </p>
-
-            <div>
-              <h4 className="font-semibold mb-2 text-primary">Technologies Used:</h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedProject?.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex gap-3 pt-4">
-              <Button
-                className="flex-1 bg-gradient-to-r from-primary to-primary-glow"
-                asChild
-              >
-                <a href={selectedProject?.link} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  View Demo
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                className="flex-1 hover-glow-cyan"
-                asChild
-              >
-                <a href={selectedProject?.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4 h-4 mr-2" />
-                  View Code
-                </a>
-              </Button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

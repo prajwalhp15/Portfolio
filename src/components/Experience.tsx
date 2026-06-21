@@ -1,28 +1,29 @@
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Calendar, Building2 } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
-      role: "Product Lead",
-      company: "Salutix AI (Early-Stage Product Initiative)",
+      role: "Co-Founder & Product Lead",
+      company: "Salutix AI",
       period: "2026 – Present",
-      outcomes: [
-        "Leading product planning and development activities for healthcare and education sectors.",
-        "Coordinating key initiatives, specifically the Oral Cancer AI and Healthcare EHR platforms.",
-        "Supporting core technical architecture design, system validation, and go-to-market product strategy.",
-        "Contributing to AI-driven software architectures and executing enterprise-grade client projects.",
+      bullets: [
+        "Co-founding and building Salutix AI with a focus on healthcare technology and AI-powered workflows.",
+        "Leading product planning, feature prioritization, and early-stage product development.",
+        "Working closely with the team to identify real-world healthcare challenges and translate them into practical software solutions.",
+        "Contributing to product design, database architecture, AI integrations, and frontend development.",
+        "Building prototypes, validating ideas, and continuously refining products based on feedback and learnings.",
+        "Managing day-to-day execution across product, engineering, and business discussions.",
       ],
     },
     {
       role: "AI Engineering Intern",
       company: "Formaculture",
       period: "2025 – Present",
-      outcomes: [
-        "Developed custom, production-grade AI models for industrial automation and architectural design analysis.",
-        "Built CAD-based data pipelines and pattern extraction algorithms to process complex spatial layouts.",
-        "Contributed to core machine learning workflow research and solved complex spatial indexing challenges.",
-        "Collaborated directly with founders to conceptualize and build automation-focused AI software features.",
+      bullets: [
+        "AI Development: Contributing to custom computer vision algorithms and spatial CAD pattern extraction workflows.",
+        "Engineering Ownership: Designing spatial heuristics pipelines and deploying localized model inference systems.",
+        "Product Implementation: Partnering directly with startup founders to translate CAD layouts into functional automated software features.",
       ],
     },
   ];
@@ -30,11 +31,13 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-32 px-6 md:px-8 bg-[#0D0D0D] border-b border-white/5 relative overflow-hidden"
+      className="py-32 px-6 md:px-8 bg-slate-50/50 border-b border-slate-200/60 relative overflow-hidden"
     >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#3b82f604,transparent_50%)] pointer-events-none" />
+
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-20 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,14 +46,14 @@ const Experience = () => {
             className="text-primary text-xs font-semibold tracking-wider uppercase mb-3"
             id="experience-badge"
           >
-            History
+            History & Roles
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black tracking-tight text-[#FAFAFA]"
+            className="text-4xl md:text-5xl font-black tracking-tight text-slate-900"
             id="experience-heading"
           >
             Professional Experience
@@ -60,14 +63,14 @@ const Experience = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[#A1A1AA] text-base mt-2"
+            className="text-slate-600 text-lg mt-3 max-w-2xl leading-relaxed"
           >
-            Engineering systems, managing product life-cycles, and contributing to core AI research.
+            Emphasizing startup ownership, customer validation, and end-to-end execution.
           </motion.p>
         </div>
 
         {/* Experience List */}
-        <div className="space-y-12">
+        <div className="space-y-16">
           {experiences.map((exp, idx) => (
             <motion.div
               key={exp.role}
@@ -75,37 +78,44 @@ const Experience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 pt-8 border-t border-white/5"
+              className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pt-10 border-t border-slate-200/60"
               id={`experience-block-${idx}`}
             >
               {/* Left Column: Period & Company */}
-              <div className="md:col-span-4 flex flex-col justify-start">
-                <span className="text-sm text-primary font-semibold tracking-wide uppercase mb-1" id={`experience-period-${idx}`}>
-                  {exp.period}
-                </span>
-                <h3 className="text-xl font-bold text-[#FAFAFA]" id={`experience-company-${idx}`}>
-                  {exp.company}
-                </h3>
+              <div className="md:col-span-4 space-y-3">
+                <div className="flex items-center gap-2 text-primary">
+                  <Calendar className="w-4 h-4" />
+                  <span className="text-xs font-bold uppercase tracking-wider" id={`experience-period-${idx}`}>
+                    {exp.period}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-slate-400" />
+                  <h3 className="text-2xl font-black text-slate-900 tracking-tight" id={`experience-company-${idx}`}>
+                    {exp.company}
+                  </h3>
+                </div>
               </div>
 
               {/* Right Column: Role & Achievements */}
-              <div className="md:col-span-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-1.5 rounded bg-primary/10 border border-primary/20">
-                    <Briefcase className="w-4 h-4 text-primary" />
+              <div className="md:col-span-8 space-y-6">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 text-primary">
+                    <Briefcase className="w-5 h-5" />
                   </div>
-                  <h4 className="text-xl font-semibold text-[#FAFAFA]" id={`experience-role-${idx}`}>
+                  <h4 className="text-xl font-bold text-slate-900 tracking-tight" id={`experience-role-${idx}`}>
                     {exp.role}
                   </h4>
                 </div>
-                <ul className="space-y-3">
-                  {exp.outcomes.map((outcome, oIdx) => (
+
+                <ul className="space-y-3.5">
+                  {exp.bullets.map((bullet, bIdx) => (
                     <li
-                      key={oIdx}
-                      className="flex items-start gap-3 text-[#E5E5E5] text-base leading-relaxed"
+                      key={bIdx}
+                      className="flex items-start gap-3 text-slate-700 text-xs md:text-sm leading-relaxed"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span>{outcome}</span>
+                      <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>

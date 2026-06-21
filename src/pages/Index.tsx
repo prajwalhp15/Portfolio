@@ -1,8 +1,8 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
 import Products from "@/components/Products";
+import Salutix from "@/components/Salutix";
 import ClientWork from "@/components/ClientWork";
+import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Leadership from "@/components/Leadership";
 import Skills from "@/components/Skills";
@@ -11,12 +11,12 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#FAFAFA]">
+    <div className="min-h-screen bg-slate-50/20 text-slate-800 font-sans antialiased">
       <Hero />
-      <About />
-      <Experience />
       <Products />
+      <Salutix />
       <ClientWork />
+      <Experience />
       <Projects />
       <Leadership />
       <Skills />

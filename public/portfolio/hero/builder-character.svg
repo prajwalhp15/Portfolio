@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" fill="none">
+  <!-- Minimalist Editorial Character Vector Illustration -->
+  <!-- Shadow Base -->
+  <ellipse cx="250" cy="530" rx="160" ry="18" fill="#161616" fill-opacity="0.08" />
+
+  <!-- Cross-Legged Legs & Pants (Bold Minimal Black Shapes) -->
+  <path d="M 140 430 C 130 470 160 520 220 520 L 280 520 C 340 520 370 470 360 430 Z" fill="#161616" />
+  
+  <!-- Left Leg Curve -->
+  <path d="M 120 440 C 110 480 150 515 210 515 C 240 515 250 490 220 470 C 180 450 140 445 120 440 Z" fill="#1e1e1e" stroke="#161616" stroke-width="3" />
+  
+  <!-- Right Leg Curve -->
+  <path d="M 380 440 C 390 480 350 515 290 515 C 260 515 250 490 280 470 C 320 450 360 445 380 440 Z" fill="#161616" stroke="#161616" stroke-width="3" />
+
+  <!-- Accent Shoes / Socks -->
+  <ellipse cx="145" cy="495" rx="20" ry="12" fill="#FF4D24" />
+  <ellipse cx="355" cy="495" rx="20" ry="12" fill="#FF4D24" />
+  <path d="M 130 495 C 130 505 160 505 160 495" stroke="#161616" stroke-width="2" fill="none" />
+  <path d="M 340 495 C 340 505 370 505 370 495" stroke="#161616" stroke-width="2" fill="none" />
+
+  <!-- Body Torso / Oversized Minimal Hoodie (Black Shape) -->
+  <path d="M 170 240 C 150 320 155 420 180 440 L 320 440 C 345 420 350 320 330 240 Z" fill="#161616" />
+  <path d="M 170 240 C 210 260 290 260 330 240 C 310 210 280 200 250 200 C 220 200 190 210 170 240 Z" fill="#161616" />
+  
+  <!-- Hoodie Crease Lines -->
+  <path d="M 210 320 Q 250 340 290 320" stroke="#F3F0E8" stroke-width="2" stroke-opacity="0.3" fill="none" />
+  <path d="M 230 380 Q 250 390 270 380" stroke="#F3F0E8" stroke-width="2" stroke-opacity="0.2" fill="none" />
+
+  <!-- Arms holding Laptop -->
+  <path d="M 175 250 C 145 320 160 380 210 400" stroke="#161616" stroke-width="42" stroke-linecap="round" fill="none" />
+  <path d="M 325 250 C 355 320 340 380 290 400" stroke="#161616" stroke-width="42" stroke-linecap="round" fill="none" />
+  
+  <!-- Sleeves lines -->
+  <path d="M 175 250 C 145 320 160 380 210 400" stroke="#262626" stroke-width="36" stroke-linecap="round" fill="none" />
+  <path d="M 325 250 C 355 320 340 380 290 400" stroke="#262626" stroke-width="36" stroke-linecap="round" fill="none" />
+
+  <!-- Hands (Minimal Cream Skin Tone) -->
+  <circle cx="215" cy="400" r="14" fill="#F3F0E8" stroke="#161616" stroke-width="3" />
+  <circle cx="285" cy="400" r="14" fill="#F3F0E8" stroke="#161616" stroke-width="3" />
+
+  <!-- Neck & Minimal Editorial Head -->
+  <rect x="238" y="175" width="24" height="35" rx="6" fill="#F3F0E8" stroke="#161616" stroke-width="3" />
+  
+  <!-- Head Shape (Minimal Editorial Contour) -->
+  <path d="M 205 130 C 205 85 295 85 295 130 C 295 175 205 175 205 130 Z" fill="#F3F0E8" stroke="#161616" stroke-width="4" />
+  
+  <!-- Stylized Hair (Minimal Dark Shape) -->
+  <path d="M 200 120 C 200 70 250 60 295 85 C 285 70 250 65 220 75 C 200 85 195 105 200 120 Z" fill="#161616" />
+  <path d="M 215 90 C 240 75 280 80 295 100 C 290 85 260 75 230 80 Z" fill="#161616" />
+
+  <!-- Subtle Glasses / Minimal Facial Line -->
+  <path d="M 225 125 L 250 125 M 255 125 L 280 125" stroke="#161616" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M 248 125 L 257 125" stroke="#161616" stroke-width="2" />
+
+  <!-- Sleek Laptop Resting on Lap -->
+  <g transform="translate(160, 360)">
+    <!-- Open Laptop Screen (Angled facing character) -->
+    <path d="M 20 0 L 160 0 L 175 -85 L 5 -85 Z" fill="#FAF8F5" stroke="#161616" stroke-width="4" />
+    <path d="M 24 -4 L 156 -4 L 169 -80 L 11 -80 Z" fill="#161616" />
+    
+    <!-- Screen Display Glow Accent -->
+    <path d="M 30 -10 L 150 -10 L 160 -70 L 20 -70 Z" fill="#F3F0E8" />
+    <rect x="45" y="-55" width="70" height="6" rx="2" fill="#FF4D24" />
+    <rect x="45" y="-42" width="90" height="4" rx="1" fill="#161616" opacity="0.4" />
+    <rect x="45" y="-32" width="60" height="4" rx="1" fill="#161616" opacity="0.4" />
+
+    <!-- Laptop Base Keyboard Deck -->
+    <path d="M 0 10 L 180 10 L 165 0 L 15 0 Z" fill="#F3F0E8" stroke="#161616" stroke-width="4" />
+    
+    <!-- PH. Sticker on Laptop Rear Screen Back -->
+    <circle cx="90" cy="-45" r="14" fill="#FF4D24" />
+    <text x="90" y="-40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="900" font-size="10" fill="#FAF8F5">PH.</text>
+  </g>
+</svg>

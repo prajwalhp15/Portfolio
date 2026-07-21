@@ -2,80 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 210 20% 99%;
-    --foreground: 224 71.4% 4.1%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --glass: 0 0% 100% / 0.8;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 221.2 83.2% 63.3%;
-
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220 14.3% 9%;
-    --secondary-glow: 220 14.3% 90%;
-
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220 14.3% 9%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
-
-    --radius: 0.75rem;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+    --bg-paper: #F3F0E8;
+    --text-ink: #161616;
+    --accent-red: #FF4D24;
+    --border-rule: #E2DDD5;
+    --muted-text: #666666;
   }
 
   body {
-    @apply bg-background text-foreground font-['Inter'] antialiased selection:bg-primary/20 selection:text-primary;
+    background-color: var(--bg-paper);
+    color: var(--text-ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-['Plus_Jakarta_Sans'] tracking-tight font-bold text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-ink);
   }
 
-  html {
-    scroll-behavior: smooth;
+  ::selection {
+    background-color: var(--accent-red);
+    color: #ffffff;
   }
 }
 
 @layer utilities {
-  .glass-panel {
-    @apply backdrop-blur-md bg-white/70 border border-slate-200/50 rounded-xl shadow-sm;
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
   }
 
-  .premium-card {
-    @apply bg-white border border-slate-100/80 rounded-2xl shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-300;
+  .font-body {
+    font-family: 'Inter', sans-serif;
   }
 
-  .accent-link {
-    @apply text-primary hover:text-primary-glow transition-colors duration-200;
+  .border-paper {
+    border-color: var(--border-rule);
   }
 
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md;
+  .text-accent {
+    color: var(--accent-red);
+  }
+
+  .bg-accent {
+    background-color: var(--accent-red);
+  }
+
+  .editorial-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .editorial-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-red);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .editorial-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }
-

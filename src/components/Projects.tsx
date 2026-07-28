@@ -44,7 +44,7 @@ const Projects = () => {
       outcome: "Automated detection of Tuberculosis, Pneumonia, and COVID with explainable visual highlights. Note: Currently undergoing ethical clearance at SIMS Medical College, Shivamogga.",
       tech: ["DenseNet", "ResNet", "EfficientNet", "Grad-CAM Explainability", "PyTorch", "Python"],
       github: "https://github.com/prajwalhp15",
-      demo: "",
+      demo: "https://huggingface.co/spaces/pavan034/lumina",
       isConfidential: false,
     },
     {

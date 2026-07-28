@@ -83,7 +83,31 @@ export const AiExperiments: React.FC = () => {
                 </span>
               ))}
             </div>
-            {/* LuminaCXR explicitly has NO button */}
+            {/* Dynamic Actions */}
+            {flagshipAi.links && Object.keys(flagshipAi.links).length > 0 && (
+              <div className="flex items-center gap-3 font-mono text-xs font-bold uppercase">
+                {flagshipAi.links.live && (
+                  <a
+                    href={flagshipAi.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-[#161616] text-[#F3F0E8] hover:bg-[#FF4D24] hover:text-white transition-colors flex items-center gap-1"
+                  >
+                    <span>VIEW LIVE</span> <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {flagshipAi.links.github && (
+                  <a
+                    href={flagshipAi.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 border border-[#161616] text-[#161616] hover:bg-[#161616] hover:text-white transition-colors flex items-center gap-1"
+                  >
+                    <span>GITHUB</span> <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </motion.article>
 

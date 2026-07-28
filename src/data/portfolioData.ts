@@ -256,7 +256,10 @@ export const AI_EXPERIMENTS: AIExperiment[] = [
     technology: ["DenseNet", "ResNet", "EfficientNet", "Grad-CAM", "PyTorch", "OpenCV"],
     selectionBadge: "Selected for AICTE YUKTI Innovation Challenge 2025 (2nd Stage)",
     tags: ["Deep Learning", "Grad-CAM", "Computer Vision", "Healthcare AI"],
-    links: {} // Explicitly NO button
+    links: {
+      live: "https://huggingface.co/spaces/pavan034/lumina",
+      github: "https://github.com/prajwalhp15"
+    }
   },
   {
     id: "local-rag",

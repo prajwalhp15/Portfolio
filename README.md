@@ -26,6 +26,7 @@ Welcome to the repository for the personal editorial portfolio of **Prajwal H P*
 - **Real Estate Management Platform**: Interactive plot visualizer, customer CRM, and booking workflow system built for real client requirements.
 
 ### 03 / Real Client Software (Shipped & Deployed)
+- **Aqua Deep Clean** ([Live Site ↗](https://aquadeepclean.vercel.app/)): Modern, responsive website built for a professional cleaning business, focusing on service discovery (residential, commercial, industrial, water tank cleaning) and optimized inquiry generation.
 - **Manasa Vet Pharma** ([Live Site ↗](https://www.manasavetpharma.com/)): Unified digital home for a veterinary business ecosystem containing multiple shops/locations, Pet Mart, and Veterinary Hospital.
 - **Komala Scented Supari** ([Live Site ↗](https://komalashop.vercel.app/)): Digital commerce & business web portal taking a traditional product business online with ordering, retail/wholesale inquiry routing, and lightweight CRM.
 

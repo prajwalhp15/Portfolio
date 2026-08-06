@@ -204,6 +204,23 @@ export const FEATURED_CASE_STUDIES: ProductCaseStudy[] = [
 
 export const CLIENT_PROJECTS: ClientProject[] = [
   {
+    id: "aqua-deep-clean",
+    title: "AQUA DEEP CLEAN",
+    subtitle: "Helping a Professional Cleaning Business Build Trust & Generate More Customer Inquiries.",
+    clientType: "CLIENT PRODUCT / BUSINESS WEBSITE",
+    status: "SHIPPED",
+    businessProblem: "A professional cleaning services company lacked a modern digital presence to effectively showcase its residential, commercial, industrial, and water tank cleaning services. Potential customers had limited information about the business, making it difficult to build trust and generate quality service inquiries.",
+    existingWorkflow: "Potential customers relied on word-of-mouth or offline channels, leading to limited service discovery and manual inquiry tracking.",
+    clientRequirements: "A modern, responsive online presence highlighting complete service portfolios, building professional brand credibility, and generating customer inquiries.",
+    solutionDesigned: "Designed and delivered a modern, responsive business website that highlights the company's complete service portfolio, strengthens brand credibility, and provides an intuitive inquiry experience optimized for desktop and mobile users.",
+    productBuilt: "A conversion-focused client website highlighting cleaning portfolios with clear service discovery and optimized lead generation funnels.",
+    contribution: "Designed user flow and service portfolio hierarchy, built responsive frontend interfaces, optimized lead capture, and managed deployment on Vercel.",
+    tags: ["Business Website", "Service Portfolio", "Lead Generation"],
+    links: {
+      live: "https://aquadeepclean.vercel.app/"
+    }
+  },
+  {
     id: "manasa-vet-pharma",
     title: "MANASA VET PHARMA",
     subtitle: "Unified Digital Home for a Veterinary Business Ecosystem",

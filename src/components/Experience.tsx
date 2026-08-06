@@ -19,7 +19,7 @@ const Experience = () => {
     {
       role: "AI Engineering Intern",
       company: "Formaculture",
-      period: "2025 – Present",
+      period: "Dec 2025 – May 2026",
       bullets: [
         "AI Development: Contributing to custom computer vision algorithms and spatial CAD pattern extraction workflows.",
         "Engineering Ownership: Designing spatial heuristics pipelines and deploying localized model inference systems.",

@@ -391,7 +391,7 @@ export const EXPERIENCE_TIMELINE: ExperienceItem[] = [
     id: "exp-formaculture",
     company: "FORMACULTURE",
     role: "AI Engineering Intern",
-    period: "2024 - PRESENT",
+    period: "DEC 2025 - MAY 2026",
     location: "Remote / Hybrid",
     summary: "Working on practical AI-driven solutions for industrial automation and CAD-based spatial design analysis in an early-stage team environment.",
     contributions: [

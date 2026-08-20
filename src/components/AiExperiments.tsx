@@ -148,7 +148,12 @@ export const AiExperiments: React.FC = () => {
                 </div>
 
                 {/* Dynamic Actions */}
-                {exp.links?.github && (
+                {exp.confidentialNotice ? (
+                  <div className="font-mono text-[10px] leading-relaxed border-2 border-[#161616] p-3 bg-[#F3F0E8] text-[#161616]/80 flex items-start gap-2 shadow-[2px_2px_0px_0px_#161616]">
+                    <span className="shrink-0 text-[#FF4D24]">🔒</span>
+                    <span>{exp.confidentialNotice}</span>
+                  </div>
+                ) : exp.links?.github && (
                   <a
                     href={exp.links.github}
                     target="_blank"

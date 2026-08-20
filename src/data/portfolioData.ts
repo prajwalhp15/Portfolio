@@ -68,6 +68,7 @@ export interface AIExperiment {
   selectionBadge?: string;
   tags: string[];
   links?: ProjectLinks;
+  confidentialNotice?: string;
 }
 
 export interface ProcessStage {
@@ -126,7 +127,7 @@ export const PORTFOLIO_PROFILE: Profile = {
     email: "prajwalhp15@gmail.com",
     linkedin: "https://www.linkedin.com/in/prajwal-hp/",
     github: "https://github.com/prajwalhp15",
-    resume: "https://drive.google.com/file/d/1Y6K5HgDdbpcZxBkrlcnSar67WIuvGPez/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/1XgnakKLUwptxz3xqxGZaysgooAHoN0d3/view?usp=sharing",
   },
 };
 
@@ -331,7 +332,8 @@ export const AI_EXPERIMENTS: AIExperiment[] = [
     ],
     technology: ["Real-time GPS", "Websockets", "React", "Map Integration"],
     tags: ["Real-time Tracking", "Karnataka Police", "Deployed System"],
-    links: {} // Explicitly NO button
+    links: {},
+    confidentialNotice: "Code & demo restricted due to Karnataka Police confidentiality requirements."
   }
 ];
 
@@ -457,7 +459,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     id: "nitk-bootcamp",
     title: "NITK Surathkal Cyber Knowledge Project",
     subtitle: "Supported by Honeywell",
-    date: "2025",
+    date: "2024",
     description: "Participated in technical learning and project development supported by Honeywell."
   }
 ];

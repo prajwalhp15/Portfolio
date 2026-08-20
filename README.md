@@ -53,7 +53,7 @@ Welcome to the repository for the personal editorial portfolio of **Prajwal H P*
 
 ### 09 / Contact & Centralized Resume
 - High-impact editorial contact block.
-- Centralized Resume URL: [Google Drive Resume ↗](https://drive.google.com/file/d/1Y6K5HgDdbpcZxBkrlcnSar67WIuvGPez/view?usp=sharing)
+- Centralized Resume URL: [Google Drive Resume ↗](https://drive.google.com/file/d/1XgnakKLUwptxz3xqxGZaysgooAHoN0d3/view?usp=sharing)
 
 ---
 
@@ -90,4 +90,4 @@ npm run build
 - **Email**: [prajwalhp15@gmail.com](mailto:prajwalhp15@gmail.com)
 - **LinkedIn**: [linkedin.com/in/prajwal-hp](https://www.linkedin.com/in/prajwal-hp/)
 - **GitHub**: [github.com/prajwalhp15](https://github.com/prajwalhp15)
-- **Resume**: [Google Drive Link](https://drive.google.com/file/d/1Y6K5HgDdbpcZxBkrlcnSar67WIuvGPez/view?usp=sharing)
+- **Resume**: [Google Drive Link](https://drive.google.com/file/d/1XgnakKLUwptxz3xqxGZaysgooAHoN0d3/view?usp=sharing)
